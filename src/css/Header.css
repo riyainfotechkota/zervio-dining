@@ -1,0 +1,48 @@
+#menuPanel {
+    position: static !important;
+    transform: none !important;
+    visibility: visible !important;
+    height: auto !important;
+    border: none;
+    background: #ea7100 !important;
+}
+.logout {
+    position: absolute;
+    color: white;
+    right: 12px;
+    top: 50%;
+    font-weight: bold;
+}
+.menu-horizontal {
+    flex-direction: row;
+    margin-top: 0.1rem;
+}
+.menu-horizontal li a:hover {
+    color: #f3f1eb;
+}
+.active a {
+    color: #f3f1eb !important;
+}
+
+.header {
+    background: #031837;
+}
+.imageDiv{
+    padding: 10px;
+    position: relative;
+}
+.menu-horizontal {
+    list-style: none;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.menu-horizontal li a {
+    color: #031837;
+    text-decoration: none;
+    padding: 8px 15px;
+    font-size: 15px;
+}

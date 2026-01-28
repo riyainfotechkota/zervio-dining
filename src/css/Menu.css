@@ -1,0 +1,282 @@
+.menu-management {
+  padding: 25px;
+}
+
+.menu-management h2 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.menuHead {
+  display: flex !important;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 25px;
+  padding: 20px;
+  align-items: start;
+  background: #f2f2f2;
+}
+
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tabs span {
+  padding: 8px 18px;
+  border-radius: 6px;
+  background: #e8e8e8;
+  border: 1px solid #031837;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.tabs .active-tab {
+  background: #031837;
+  color: white;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.form {
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #ea7100;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #444;
+}
+
+.form input,
+.form select,
+.form textarea {
+  margin-top: 4px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fafafa;
+}
+
+textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+.add-btn {
+  grid-column: 1 / span 2;
+  width: 150px;
+  padding: 8px;
+  color: #031837;
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.2s ease;
+  border: 0.5px solid #031837;
+}
+
+.add-btn:hover {
+  background: #031837;
+  color: #ccc;
+}
+
+.item-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
+}
+
+.status-button {
+  border: 1px solid #031837;
+  border-radius: 5%;
+  color: #0a0a0a;
+
+}
+
+.status-button.active {
+  background: #c0392b;
+  color: #f2f2f2;
+
+}
+
+.item-card {
+  background: #ffffff;
+  border: 1px solid #ea7100;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.show-more-btn {
+  float: right;
+  padding: 5px;
+  border-radius: 4px;
+  background: #031837;
+  color: whitesmoke;
+}
+
+.item-card img {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  bottom: 0%;
+  right: 01%
+}
+
+.item-card .subMenuImg {
+  height: 70px;
+  width: 70px;
+}
+
+.item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: #222;
+}
+
+.item-price {
+  background: #031837;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.item-category {
+  font-size: 13px;
+  color: #b49a4a;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.item-desc {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.item-time {
+  color: #777;
+  font-size: 13px;
+}
+
+.item-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  font-size: 13px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: #3a86ff;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background: #336fd4;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: #070707;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+
+.item-card em {
+  color: #777;
+}
+
+.item-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: #3a86ff;
+}
+
+.edit-btn:hover {
+  background: #336fd4;
+}
+
+.delete-btn {
+  background: #e74c3c;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+.edit-btn svg,
+.delete-btn svg {
+  pointer-events: none;
+}
+
+.menuHead span {
+  padding-bottom: 3px;
+  border-bottom: 2px solid #ea7100;
+}
+
+.menuHead {
+  display: flex !important;
+  align-items: flex-start;
+}
+
+.price-box {
+  background: #c8a54f;
+  padding: 4px 10px;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 600;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.submenu-list {
+  list-style: none;
+}

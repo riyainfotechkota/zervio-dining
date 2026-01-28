@@ -1,0 +1,133 @@
+.main {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+body{
+  background: #f2f2f2;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #031837;
+}
+
+.card {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+}
+
+.waiter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.waiter-form input {
+  flex: 1 1 200px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.waiter-form input:focus {
+  border-color: #ea7100;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+.add-waiter-card button {
+  padding: 12px 25px;
+  background-color: #031837;
+  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  width: fit-content;
+  margin-top: 5px;
+  margin-left: auto;
+}
+
+.add-waiter-card button:hover {
+  border: 1px solid #ea7100;
+  background: whitesmoke;
+  color: #031837;
+}
+
+.search-card input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.search-card input:focus {
+  border-color: #ea7100;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+.table-card {
+  overflow-x: auto;
+}
+
+.waiters-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 500px;
+}
+
+.waiters-table th,
+.waiters-table td {
+  padding: 15px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 16px;
+}
+
+.waiters-table th {
+  background-color: #f7f7f7;
+  font-weight: 600;
+  border-bottom: 2px solid #ea7100
+
+}
+
+.waiters-table tr:hover {
+  background-color: #f1f9ff;
+}
+
+.waiters-table td:first-child {
+  text-align: center;
+}
+
+.waiters-table td[colspan] {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  padding: 20px;
+}
+button.deleteWaiter{
+  padding: 5px !important;
+  font-size: 15px !important;
+}
+
+@media (max-width: 768px) {
+  .waiter-form {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .waiters-table th,
+  .waiters-table td {
+    font-size: 14px;
+    padding: 12px 8px;
+  }
+}

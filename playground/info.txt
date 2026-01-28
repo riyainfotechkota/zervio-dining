@@ -1,0 +1,10 @@
+List Of APIS
+........................
+Submenu [get in menu API] -done 
+Table Creation 
+Get Tables
+Order History
+Waiter [CRUD]
+new order request
+
+current orders are from order history | Status not delivered 

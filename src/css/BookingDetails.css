@@ -1,0 +1,167 @@
+/* Layout */
+.booking-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100vh;
+    background: #f5f5dc;
+    font-family: serif;
+}
+
+/* Left */
+.booking-form {
+    padding: 24px;
+    width: 25rem;
+}
+
+.booking-form h2 {
+    margin-bottom: 20px;
+    color: #1b2a4e;
+}
+
+.field {
+    margin-bottom: 16px;
+}
+
+.field-label {
+    font-size: 12px;
+    margin-bottom: 6px;
+    color: #5a6c84;
+}
+
+.field-btn {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #1b2a4e;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.field-btn.active {
+    background: #1b2a4e;
+    color: #f5f5dc;
+}
+
+.continue {
+    justify-content: center;
+}
+
+/* Right */
+.booking-side {
+    position: relative;
+    height: 29rem;
+}
+
+.restaurant-image {
+    /* width: 100%; */
+    height: 500px;
+    /* object-fit: cover; */
+}
+
+/* Panel */
+.side-panel {
+    height: 100%;
+    background: #f5f5dc;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.side-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.side-header h3 {
+    color: #1b2a4e;
+}
+
+.side-header button {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Options */
+.option-btn {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 12px;
+    border: 1px solid #1b2a4e;
+    background: transparent;
+    cursor: pointer;
+}
+
+.option-btn.selected {
+    background: #1b2a4e;
+    color: #fff;
+}
+
+/* DatePicker overrides */
+.react-datepicker {
+    padding: 10px 90px;
+}
+
+.react-datepicker__day-name {
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    background: #031837;
+    color: white;
+}
+
+.react-datepicker__day-name:first-child {
+    background: red;
+}
+
+.react-datepicker__navigation {
+    background: #031837;
+    display: flex;
+    justify-content: center;
+}
+
+.cote-calendar .react-datepicker__day {
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    border: 1px solid #1b2a4e;
+}
+
+.react-datepicker__day--selected {
+    background: #1b2a4e;
+    color: #fff;
+}
+
+.react-datepicker__day--today {
+    background: #c0c0c0;
+}
+
+.main-head {
+    display: flex;
+    align-items: center;
+}
+
+.dining-tables {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.diningDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.field-input {
+    border: 1px solid #1b2a4e;
+    padding: 12px;
+    width: 100%;
+}
+
+.field-input:focus {
+    border-color: #ea7100;
+    outline: none;
+}

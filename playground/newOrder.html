@@ -1,0 +1,2221 @@
+<html lang="en"><head>
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zervio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <style type="text/css" data-vite-dev-id="/home/raghu/Desktop/riya/zervio-dining/src/index.css">/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}</style><style type="text/css" data-vite-dev-id="/home/raghu/Desktop/riya/zervio-dining/src/App.css">/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}</style><style type="text/css" data-vite-dev-id="/home/raghu/Desktop/riya/zervio-dining/src/css/Menu.css">
+.menu-management {
+  padding: 25px;
+  /* max-width: 900px; */
+  /* margin: 0 auto; */
+}
+
+.menu-management h2 {
+  font-size: 20px;
+  font-weight: 500;
+  /* margin-bottom: 15px; */
+}
+.menuHead{
+    display: flex !important;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+main {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 25px;
+    padding: 20px;
+    align-items: start;
+    background: #f2f2f2;
+}
+
+/* -------------------------
+   TABS
+--------------------------*/
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tabs span {
+  padding: 8px 18px;
+  border-radius: 6px;
+  background: #e8e8e8;
+  border: 1px solid #031837;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.tabs .active-tab {
+  background: #031837;
+  color: white;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* -------------------------
+   FORM STYLING
+--------------------------*/
+.form {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 20px; */
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #ea7100;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #444;
+}
+
+.form input,
+.form select,
+.form textarea {
+  margin-top: 4px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fafafa;
+}
+
+textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+/* -------------------------
+   ADD BUTTON
+--------------------------*/
+.add-btn {
+  grid-column: 1 / span 2;
+  width: 150px;
+  padding: 8px;
+  /* background: #c8a54f; */
+  color: #031837;
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.2s ease;
+  border: 0.5px solid #031837;
+}
+
+.add-btn:hover {
+  background: #031837;
+  color: #ccc;
+}
+
+/* -------------------------
+   ITEM LIST
+--------------------------*/
+.item-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
+}
+.status-button{
+  border: 1px solid #031837;
+  border-radius: 5%;
+  color: #0a0a0a;
+
+}
+.status-button.active {
+  background: #c0392b;
+  color: #f2f2f2;
+
+}
+
+/* .item-card {
+  background: white;
+  border: 1px solid #dcdcdc;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.06);
+  font-size: 14px;
+  color: #333;
+} */
+ /* ITEM CARD */
+.item-card {
+  background: #ffffff;
+  border: 1px solid #ea7100;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.08);
+  position: relative;
+}
+.show-more-btn{
+  float: right;
+  padding: 5px;
+  border-radius: 4px;
+  background: #031837;
+  color: whitesmoke;
+}
+.item-card img{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    bottom:0%;
+    right:01%
+}
+.item-card .subMenuImg{
+  height: 70px;
+  width: 70px;
+}
+
+.item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: #222;
+}
+
+.item-price {
+  background: #c8a54f;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.item-category {
+  font-size: 13px;
+  color: #b49a4a;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.item-desc {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.item-time {
+  color: #777;
+  font-size: 13px;
+}
+
+/* ACTION BUTTONS */
+.item-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  /* padding: 6px 12px; */
+  border: none;
+  font-size: 13px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: #3a86ff;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background: #336fd4;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: #070707;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+
+.item-card em {
+  color: #777;
+}
+.item-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+/* ICON BUTTONS */
+.edit-btn,
+.delete-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* EDIT BUTTON */
+.edit-btn {
+  background: #3a86ff;
+}
+
+.edit-btn:hover {
+  background: #336fd4;
+}
+
+/* DELETE BUTTON */
+.delete-btn {
+  background: #e74c3c;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+.edit-btn svg,
+.delete-btn svg {
+  pointer-events: none;
+}
+.menuHead span{
+    padding-bottom: 3px;
+    border-bottom: 2px solid #c8a54f;
+}
+.menuHead{
+    display: flex !important;
+    align-items: flex-start;
+}
+
+/* -------------------------
+   PRICE LABELS (if used later)
+--------------------------*/
+.price-box {
+  background: #c8a54f;
+  padding: 4px 10px;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 600;
+  display: inline-block;
+  margin-left: 10px;
+}
+.submenu-list{
+  list-style: none;
+}</style><style type="text/css" data-vite-dev-id="/home/raghu/Desktop/riya/zervio-dining/src/css/Header.css">#menuPanel {
+    position: static !important;
+    transform: none !important;
+    visibility: visible !important;
+    height: auto !important;
+    border: none;
+    background: #ea7100 !important;
+}
+.logout {
+    position: absolute;
+    color: white;
+    right: 12px;
+    top: 50%;
+    font-weight: bold;
+}
+.menu-horizontal {
+    flex-direction: row;
+    margin-top: 0.1rem;
+}
+.menu-horizontal li a:hover {
+    color: #f3f1eb;
+}
+.active a {
+    color: #f3f1eb !important;
+}
+
+.header {
+    background: #031837;
+    /* padding: 10px; */
+}
+.imageDiv{
+    padding: 10px;
+    position: relative;
+}
+.menu-horizontal {
+    list-style: none;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.menu-horizontal li a {
+    color: #031837;
+    text-decoration: none;
+    padding: 8px 15px;
+    font-size: 15px;
+}</style><style type="text/css" data-vite-dev-id="/home/raghu/Desktop/riya/zervio-dining/src/css/Popup.css">
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700");
+
+@keyframes popUpEntrada {
+  0% { opacity: 0; margin-top: -20%; }
+  75% { margin-top: 5%; }
+  100% { opacity: 1; }
+}
+
+@keyframes popUpSaida {
+  0% { opacity: 1; }
+  75% { opacity: 1; margin-top: -20%; }
+  100% { opacity: 0; margin-top: 40%; }
+}
+
+.popUpEntrada {
+  animation: popUpEntrada 0.5s;
+}
+
+.popUpSaida {
+  animation: popUpSaida 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.popUpFundo {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.75;
+  z-index: 100;
+}
+
+.popUp {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+  font-family: "PT Sans", sans-serif;
+  color: #fff;
+  border: none;
+  overflow: hidden;
+}
+
+.p {
+  width: 300px;
+  max-width: 90%;
+  border-radius: 6px;
+}
+
+.popUp > h1 {
+  margin: 0;
+  padding: 12px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 3px solid rgba(255,255,255,0.35);
+}
+
+.popUp > div {
+  padding: 20px;
+  text-align: center;
+  line-height: 1.4em;
+}
+
+.puCancelar {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  background-color: rgba(0,0,0,0.25);
+  color: #fff;
+}
+
+.puCancelar:hover {
+  background-color: rgba(0,0,0,0.35);
+}
+
+.red {
+  background-color: #d55c4b;
+}
+
+.popUpFundo.red {
+  background-color: #4a1811;
+}
+
+.green {
+  background-color: #43b649;
+}
+
+.popUpFundo.green {
+  background-color: #173f19;
+}
+
+/* BLUE VERSION */
+
+.blue {
+  background-color: #51b2d6;
+}
+
+.popUpFundo.blue {
+  background-color: #134152;
+}
+
+.blue > h1 {
+  border-color: rgba(255,255,255,0.4);
+}
+
+.popUp > div {
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+
+</style><style type="text/css" data-vite-dev-id="/home/raghu/Desktop/riya/zervio-dining/src/css/OrderMenu.css">/* -------- MAIN LAYOUT -------- */
+main {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 25px;
+    padding: 20px;
+    align-items: start;
+    background: #f2f2f2;
+}
+
+/* -------- HEADINGS -------- */
+h1, .table-fixed > h2 {
+    font-size: 20px;
+    color: #031837;
+}
+
+
+.menuHead h1 {
+    color: #031837;
+}
+
+/* -------- LEFT CART FIXED -------- */
+.main-cart {
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ea7100;
+    box-shadow: 0 6px 18px rgba(7, 6, 1, 0.45);
+    background: #ffffff;
+    color: rgb(23, 23, 24);
+    font-weight: bold;
+}
+
+.cartIcon {
+    background-color: #20201f;
+    border: 2px solid #ea7100;
+    padding: 10px;
+    border-radius: 20%;
+    color: antiquewhite;
+}
+
+.cart {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.order-total {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.order-total button {
+    border: 1px solid #f4c430;
+    border-radius: 8px;
+    padding: 5px;
+    background: linear-gradient(135deg, #292529, #ea7100);
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+/* -------- TABLE SELECT ABOVE MENU -------- */
+.table-fixed {
+    border-radius: 8px;
+    grid-column: 2;
+    margin-top: 21px;
+    background: #ffffff;
+    color: white;
+    padding: 15px;
+    border: 1px solid #ea7100;
+    box-shadow: 0 6px 18px rgba(7, 6, 1, 0.45);
+}
+
+.table-select {
+    border: 1px solid gold;
+    width: 15rem;
+    height: 2rem;
+    border-radius: 5%;
+    margin-top: 10px;
+}
+
+/* -------- MENU SLIDE IN -------- */
+.order-menu {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    grid-column: 2;
+    background: #aba8a845;
+    padding: 14px;
+    border: 1px solid #ea7100;
+    box-shadow: 0 6px 18px rgba(7, 6, 1, 0.45);
+    border-radius: 8px;
+}
+
+.order-menu.show-menu {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menuHead {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#itemSearch {
+    border: 1px solid #031837;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: #031837;
+}
+#itemSearch:focus{
+    border-color: #ea7100;
+    outline: none;
+}
+
+
+/* -------- MENU ITEMS -------- */
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 5px;
+    row-gap: 5px;
+    padding: 10px;
+    border-radius: 3%;
+}
+
+.menu-item {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(19, 18, 18);
+    border: 2px solid #031837;
+    border-radius: 5%;
+    background: white;
+}
+
+.price {
+    background: #a05918;
+    padding: 5px;
+    height: 50px;
+    width: 30%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+/* -------- TABLES & INPUT -------- */
+.tables {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+div:has(> .itemInput) {
+    padding: 10px;
+    display: flex;
+}
+
+.itemInput {
+    /* background: black; */
+    color: #031837;
+    width: 80px;
+}
+
+.itemInput + button {
+    padding: 10px;
+    background: #031837;
+    color: white;
+    margin-left: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* -------- ALERT BOX -------- */
+.alert-box {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid white;
+    padding: 10px;
+}
+
+.alert-box .alert-text {
+    font-weight: normal;
+}
+
+.alert-close {
+    cursor: pointer;
+    font-size: 25px;
+    line-height: 1;
+    color: red;
+}
+
+/* -------- PROFILE CIRCLE ANIMATION -------- */
+.my-profile {
+    --light-blue: #ea7100;
+    --dark-blue: rgb(18 9 152 / 80%);
+    --violet: rgb(23 26 31 / 80%);
+    --conic-gradient: conic-gradient(
+        var(--dark-blue),
+        var(--violet),
+        var(--light-blue),
+        var(--dark-blue)
+    );
+}
+
+.my-profile .profile-container {
+    position: relative;
+    width: 7vw;
+    height: 7vw;
+}
+
+.my-profile .outer-circle,
+.my-profile .circle-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+}
+
+.my-profile .outer-circle {
+    background: var(--conic-gradient);
+    animation: rotate 4s linear infinite;
+    z-index: 1;
+}
+
+.my-profile .circle-glow {
+    width: 10%;
+    height: 10%;
+    top: -10%;
+    left: -10%;
+    background: var(--conic-gradient);
+    filter: blur(20px);
+    opacity: 0.5;
+    animation: pulse 4s ease-in-out infinite;
+    z-index: 2;
+}
+
+.my-profile .inner-circle {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    padding: 1rem;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    color: #222;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+</style><style type="text/css" data-vite-dev-id="/home/raghu/Desktop/riya/zervio-dining/src/css/CurrentOrder.css">/* General */
+main {
+    overflow: hidden;
+    padding: 10px 16px;
+}
+
+.pageTitle {
+    font-weight: 600;
+    margin: 10px 0 15px 0;
+}
+
+/* Top controls */
+.orderStatus {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #d5c68a;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 2px solid #e6d68d;
+    margin-bottom: 10px;
+    width: 64%;
+    margin: 0 auto
+}
+
+.switchLabel {
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+/* ===== Editable Quantity UI ===== */
+
+.qtyCell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    /* height:155px */
+    padding-bottom: 14px !important;
+}
+
+.qtyInput {
+    width: 170px;
+    padding: 3px 6px;
+    border: 1px solid #cfcfcf;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.editIcon {
+    cursor: pointer;
+    font-size: 15px;
+    color: #666;
+    transition: 0.2s;
+}
+
+.editIcon:hover {
+    color: #3498db;
+}
+
+/* Save button under table */
+.saveBtn {
+    margin-top: -10px;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+/* Order List Layout */
+.ordersList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(450px, 1fr));
+    gap: 14px;
+    margin: 0 auto;
+}
+.print{
+    display: flex;
+    /* gap:2px; */
+}
+.actioButton{
+    position: relative;
+    bottom: 0px;
+}
+
+/* Card Style */
+.orderCard {
+    background: #fff;
+    border: 2px solid #e4d081;
+    padding: 16px;
+    border-radius: 12px;
+    transition: 0.2s;
+}
+
+.orderCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Header */
+.orderHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    margin-top: 4px;
+}
+
+.orderHeader h4 {
+    margin: 0;
+    font-size: 17px;
+}
+
+/* Bill Info */
+.billInfo p {
+    margin: 3px 0;
+    font-size: 14px;
+}
+
+
+/* Status row */
+.statusRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fafafa;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ececec;
+    margin-bottom: 8px;
+}
+
+.paymentText {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Table */
+.customTable th {
+    background: #f4f4f4;
+    font-size: 13px;
+}
+
+.customTable td,
+.customTable th {
+    padding: 6px 8px;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+/* Totals */
+.totalsBox {
+    background: #fafafa;
+    padding: 12px;
+    border-radius: 3px;
+    border: 1px solid #eaeaea;
+    width: 100%;
+    /* max-width: 230px; */
+    font-size: 14px;
+}
+
+.totalsBox p {
+    margin: 4px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.totalsBox .grand {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Buttons */
+.add-discount{
+    padding: 6px;
+    border-width: 1px 7px;
+    border-style: solid;
+    border-color: #007BFF;
+    border-radius: 3px;
+    margin-top: 10px;
+    float: right;
+}
+td:last-child > button{
+    border: 2px solid red;
+    font-size: 10px;
+    color: red;
+    padding: 1px 11px;
+    background: none;
+}
+.themeBtn {
+    background: #e8c55c;
+    border: none;
+    /* padding: 6px 14px; */
+    /* border-radius: 8px; */
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.themeBtn:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+.themeBtn.small {
+    padding: 4px 10px;
+    font-size: 13px;
+}
+
+.themeBtn.danger {
+    background: #e74c3c;
+    color: white;
+}
+
+.themeBtn.green {
+    background: #2ecc71;
+    color: white;
+}
+
+.themeBtn.blue {
+    background: #3498db;
+    color: white;
+}
+
+/* Remove item button */
+.btn-danger.btn-sm {
+    padding: 3px 8px;
+}
+.cancelB{
+    background: none;
+    border: none;
+    padding-bottom: 3px;
+    border-bottom: 2px solid red;
+    color: red;
+}
+</style><style type="text/css" data-vite-dev-id="/home/raghu/Desktop/riya/zervio-dining/src/css/Auth.css">.logo{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #031837;
+}
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.auth-box {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.user-icon {
+  margin: 10px 0 20px;
+}
+
+.inputs input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #031837;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #031837;
+  cursor: pointer;
+}
+
+.auth-btn:hover {
+  background-color: #fff;
+  border: 1px solid #031837;
+  color: black;
+}
+
+.toggle-auth {
+  margin-top: 15px;
+}
+
+.toggle-auth button {
+  background: none;
+  border: none;
+  color: #f99a00;
+  cursor: pointer;
+  font-weight: bold;
+}
+h1{
+  color: #031837;
+}
+
+.input-error {
+    border: 2px solid #ff4d4d !important;
+    background: #ffecec;
+}
+
+.error-text {
+    color: #ff4d4d;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+}
+</style><style type="text/css" data-vite-dev-id="/home/raghu/Desktop/riya/zervio-dining/src/css/OrderHistory.css">.main-order-history {
+  max-width: 98vw;
+  width: 100%;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  overflow-x: auto; 
+}
+
+
+.main-order-history h2 {
+  text-align: left;
+  margin-bottom: 25px;
+  font-size: 20px;
+  color: #031837;
+}
+
+.search-container {
+  margin-bottom: 20px;
+  /* text-align: center; */
+}
+
+.search-container input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 15px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.search-container input:focus {
+  outline: none;
+  border-color: #ea7100;
+  box-shadow: 0 0 6px rgba(234, 113, 0, 0.3);
+}
+
+.order-history-table {
+  width: 94vw;
+  min-width: 900px;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);  
+  background: #ffff;
+}
+
+.order-history-table th,
+.order-history-table td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.order-history-table th {
+  background-color: #f7f7f7;
+  font-weight: 600;
+  border-bottom: 2px solid #ea7100
+}
+
+.order-history-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.order-history-table td:first-child {
+  text-align: center;
+  font-weight: 500;
+}
+
+.order-history-table td[colspan] {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .order-history-table {
+    min-width: 700px;
+  }
+
+  .order-history-table th,
+  .order-history-table td {
+    font-size: 12px;
+    padding: 10px 6px;
+  }
+}
+</style><style type="text/css" data-vite-dev-id="/home/raghu/Desktop/riya/zervio-dining/src/css/Waiter.css">.main {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+body{
+  background: #f2f2f2;
+}
+
+h2 {
+  /* text-align: center; */
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #031837;
+}
+
+.card {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+}
+
+.waiter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.waiter-form input {
+  flex: 1 1 200px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.waiter-form input:focus {
+  border-color: #ea7100;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+.add-waiter-card button {
+  padding: 12px 25px;
+  background-color: #031837;
+  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  width: fit-content;
+  margin-top: 5px;
+  margin-left: auto;
+}
+
+.add-waiter-card button:hover {
+  border: 1px solid #ea7100;
+  background: whitesmoke;
+  color: #031837;
+}
+
+.search-card input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.search-card input:focus {
+  border-color: #ea7100;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+.table-card {
+  overflow-x: auto;
+}
+
+.waiters-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 500px;
+}
+
+.waiters-table th,
+.waiters-table td {
+  padding: 15px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 16px;
+}
+
+.waiters-table th {
+  background-color: #f7f7f7;
+  font-weight: 600;
+  border-bottom: 2px solid #ea7100
+
+}
+
+.waiters-table tr:hover {
+  background-color: #f1f9ff;
+}
+
+.waiters-table td:first-child {
+  text-align: center;
+}
+
+.waiters-table td[colspan] {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  padding: 20px;
+}
+button.deleteWaiter{
+  padding: 5px !important;
+  font-size: 15px !important;
+}
+
+@media (max-width: 768px) {
+  .waiter-form {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .waiters-table th,
+  .waiters-table td {
+    font-size: 14px;
+    padding: 12px 8px;
+  }
+}
+</style><style type="text/css" data-vite-dev-id="/home/raghu/Desktop/riya/zervio-dining/src/css/OrderCard.css">.newOrderCard {
+    background: #031837;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    margin: 20px 0;
+    max-width: 650px;
+    width: 100%;
+}
+
+.orderHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.orderHeader h3 {
+    margin: 0;
+}
+
+.status {
+    padding: 5px 10px;
+    font-size: 13px;
+    border-radius: 20px;
+    color: #fff;
+}
+
+.status.ordered {
+    background: #ff9800;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section h4 {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.itemsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.itemRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.priceRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+}
+
+.priceRow.grand {
+    font-size: 18px;
+    font-weight: bold;
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.pending {
+    color: #d9534f;
+}
+
+.footerRow {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    color: #666;
+}
+</style><style type="text/css" data-vite-dev-id="/home/raghu/Desktop/riya/zervio-dining/src/css/Profile.css">/* Container */
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    margin-top: 20px;
+}
+.logoAndTitle{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 10px;
+    background: #3277e0;
+    color: #031837;
+    margin-bottom: 20px;
+    
+}
+.logoDiv{
+    background: #333;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Form Labels */
+.form-label {
+    font-weight: 500;
+    color: #333;
+}
+
+/* Input Fields */
+.form-control {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 15px;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #ea7100;
+    box-shadow: 0 0 5px rgba(40,167,69,0.2);
+    outline: none;
+}
+
+/* Textarea */
+textarea.form-control {
+    min-height: 80px;
+}
+
+/* Buttons */
+.btn-success {
+    background-color: #3277e0;
+    border-color: #3277e0;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    color: #fff;
+}
+
+/* Headings */
+ h5 {
+    color: #333;
+}
+
+/* Logo / Image */
+.container img {
+    display: block;
+    /* margin-bottom: 20px; */
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    object-fit: cover;
+}
+
+/* Responsive two-column layout */
+@media (max-width: 768px) {
+    .row > .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+</style><style type="text/css" data-vite-dev-id="/home/raghu/Desktop/riya/zervio-dining/src/css/NoInternet.css">.noInternetPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 20px;
+}
+
+.icon {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+
+.retryButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.retryButton:hover {
+    background-color: #0056b3;
+}
+</style></head>
+  <body>
+    <div id="root"><header class="header"><div class="text-center logo-wrapper imageDiv"><img alt="Logo Image" width="80" height="80" class="rounded text-white" src="/src/assets/zer_logo.jpeg"><span class="logout">Logout</span></div><div class="" id="menuPanel"><div class="offcanvas-body p-0"><ul class="menu-horizontal"><li class="active"><a href="/new_order" data-discover="true">New Order</a></li><li class=""><a href="/orders" data-discover="true">Orders</a></li><li class=""><a href="/menu" data-discover="true">Menu</a></li><li class=""><a href="/orderHistory" data-discover="true">Order History</a></li><li class=""><a href="/printer" data-discover="true">Printer Settings</a></li><li class=""><a href="/profile" data-discover="true">Profile</a></li><li class=""><a href="/table" data-discover="true">Create Table</a></li><li class=""><a href="/day_report" data-discover="true">Daily Report</a></li><li class=""><a href="/product_report" data-discover="true">Product Wise Report</a></li><li class=""><a href="/waiters" data-discover="true">Waiters</a></li></ul></div></div></header><main><div class="main-cart"><div class="cart"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="cartIcon" height="50" width="50" xmlns="http://www.w3.org/2000/svg"><path d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z"></path></svg><h1 class="cartHead">Your Cart</h1></div><div class="order-total"><span>Selected Table: table19 T19</span><span>Total: ₹ 0</span><button disabled="">Place order</button></div></div><div class="table-fixed"><h2>Select Table</h2><div class="tables"><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>t0</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table1 T1</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table2 T2</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table3 T3</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table4 T4</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table5 T5</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table6 T6</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table7 T7</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table8 T8</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table9 T9</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table10 T10</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table11 T11</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table12 T12</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table13 T13</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table14 T14</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table15 T15</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table16 T16</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table17 T17</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table18 T18</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table19 T19</span></div></div></div><div class="my-profile"><div class="profile-container"><div class="outer-circle"></div><div class="circle-glow"></div><div class="inner-circle"><span>table20 T20</span></div></div></div></div></div><div class="order-menu show-menu"><div class="menuHead"><h1>Menu</h1><input id="itemSearch" placeholder="Search Items" type="text" value=""></div><div class="menu-items"><div><div class="menu-item"><span>Fresh Can Juice </span><span class="price">₹ 99</span></div></div><div><div class="menu-item"><span>Sushi Bread</span><span class="price">₹ 23</span></div></div><div><div class="menu-item"><span>Kaju Panner</span><span class="price">₹ 299</span></div></div><div><div class="menu-item"><span>Black Tea</span><span class="price">₹ 29</span></div></div><div><div class="menu-item"><span>Lemon Tea</span><span class="price">₹ 39</span></div></div></div><button class="show-more-btn">Show More</button></div></main></div>
+    <script type="module" src="/src/main.jsx?t=1765186158702"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  
+
+</body></html>

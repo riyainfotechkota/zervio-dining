@@ -1,0 +1,1016 @@
+<?php
+session_start();
+if(isset($_GET["main_category"]) && $_GET["main_category"]!="")
+{
+$_SESSION["main_category"]=$_GET["main_category"];
+}
+else{
+    if(!isset($_SESSION["main_category"]))
+    $_SESSION["main_category"]="Veg";
+}
+?>
+<html lang="en">
+   <head>
+      <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+         injectIntoGlobalHook(window);
+         window.$RefreshReg$ = () => {};
+         window.$RefreshSig$ = () => (type) => type;
+      </script>
+      <script type="module" src="/@vite/client"></script>
+      <meta charset="UTF-8">
+      <link rel="icon" type="image/svg+xml" href="/vite.svg">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="/reset.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+      <title>Zervio</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+      <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&amp;display=swap" rel="stylesheet">
+      <style type="text/css" data-vite-dev-id="/home/raghu/Desktop/riya/zervio/src/components/Header.css">
+      .header-container {
+         background: linear-gradient(to bottom, #ffffff 100%,#2d1550 0%);
+         padding: 16px;
+         position: relative;
+         /* overflow: hidden; */
+         /* padding-bottom: 0; */
+         /* border-bottom-left-radius: 20px;
+         border-bottom-right-radius: 20px; */
+         border: none;
+         animation:bg 5s linear infinite;
+         }
+         .header-container svg path {
+         filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+         }
+         .search-bar{
+         display: grid;
+         grid-template-columns: 3fr 1fr;
+         }
+         .top-header h1 {
+         font-weight: 600;
+         }
+         .top-header p {
+         font-size: 0.875rem;
+         color: #777;
+         }
+         .profile-icon {
+         color: #555;
+         padding-right: 30px;
+         }
+         .search-bar input {
+         width: 100%;
+         padding: 10px 14px;
+         border-radius: 10px;
+         border: 1px solid #ccc;
+         font-size: 0.95rem;
+         }
+         .banner-image img {
+         width: 100%;
+         height: auto;
+         border-radius: 12px;
+         object-fit: cover;
+         border:none;
+         }
+         .icon-row {
+         display: flex;
+         gap: 3px;
+         }
+         .icon-row .icon-item {
+         flex: 1;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         padding: 8px;           /* more padding for better spacing */
+         gap: 4px;
+         background: linear-gradient(to top right, rgb(76 77 165) 0%, #ffffff 100%);
+         border-top-left-radius: 10px;       /* rounded corners */
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
+         transition: 0.3s ease;
+         cursor: pointer;
+         }
+         .icon-row .icon-item:hover {
+         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+         transform: translateY(-2px);
+         }
+         .icon-row .icon-item p {
+         margin-top: 4px;
+         font-size: 0.85rem;
+         color: #555;
+         margin-bottom: 0;
+         }
+      </style>
+      <style type="text/css" data-vite-dev-id="/home/raghu/Desktop/riya/zervio/src/components/VegToggle.css">
+      .veg-toggle-container {
+         /* padding: 6px 12px; */
+         background: #ffffff;
+         border-radius: 10px;
+         display: flex;
+         /* gap: 8px; */
+         background: transparent;
+         position: relative;
+         }
+         .toggle-label {
+         /* font-family: "Inter", sans-serif; */
+         font-size: 15px;
+         font-weight: 500;
+         color: #666;
+         transition: 0.2s ease;
+         }
+         .toggle-label.active {
+         color: #000;
+         font-weight: 600;
+         }
+         .veg-switch {
+         cursor: pointer;
+         width: 48px;
+         height: 24px;
+         }
+         .veg-switch:checked {
+         background-color: #d9534f; /* red-ish for non-veg */
+         border-color: #d9534f;
+         }
+         .veg-switch:not(:checked) {
+         background-color: #28a745; /* green for veg */
+         border-color: #28a745;
+         }
+      </style>
+      <style type="text/css" data-vite-dev-id="/home/raghu/Desktop/riya/zervio/src/components/RestaurantCard.css">/* ---------- CARD CONTAINER ---------- */
+         .resto-card {
+         display: flex;
+         margin: 0 auto;
+         justify-content: space-between;
+         align-items: flex-start;
+         width: 96%;
+         max-width: 480px;
+         padding: 20px;
+         border-radius: 11px;
+         gap: 18px;
+         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+         /* Subtle vintage tone */
+         background-blend-mode: multiply;
+         /* filter: contrast(0.96) brightness(1.02) saturate(0.92); */
+         position: relative;
+         overflow: hidden;
+         }
+         /* ---------- LEFT SIDE ---------- */
+         .resto-left {
+         flex: 1.1;
+         display: flex;
+         flex-direction: column;
+         gap: 10px;
+         }
+         /* Restaurant Name */
+         .resto-name {
+         margin: 0;
+         /* font-family: "Inter", "SF Pro Display", sans-serif; */
+         font-weight: 600;
+         font-size: 20px;
+         color: #0c0c0b; /* warm vintage tone */
+         }
+         /* Top Items */
+         .resto-items {
+         margin: 0;
+         padding-left: 0px;
+         /* font-family: "Inter", sans-serif; */
+         font-size: 14px;
+         color: #0e0d0c;
+         opacity: 0.9;
+         }
+         .resto-items li {
+         margin-bottom: 3px;
+         }
+         /* Delivery Time */
+         .resto-delivery-time {
+         /* font-family: "Inter", sans-serif; */
+         font-size: 15px;
+         font-weight: bold;
+         color: #0c0b0b;
+         margin: 2px 0;
+         }
+         /* Order Button */
+         .order-btn {
+         margin-top: 8px;
+         padding: 10px 18px;
+         border-radius: 50px;
+         border: none;
+         /* 🔥 Red → Black Gradient */
+         background: linear-gradient(135deg, #d72638 0%, #8b0000 40%, #000000 100%);
+         color: white;
+         /* font-family: "Inter", sans-serif; */
+         font-weight: 600;
+         font-size: 14px;
+         cursor: pointer;
+         transition: 0.25s ease;
+         box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* subtle depth */
+         }
+         /* Hover effect */
+         .order-btn:hover {
+         background: linear-gradient(135deg, #ff2e3a 0%, #b00000 40%, #111111 100%);
+         transform: translateY(-1px);
+         }
+         /* ---------- RIGHT SIDE ---------- */
+         .resto-right {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         flex: 0.9;
+         gap: 8px;
+         }
+         /* Image with border-radius */
+         .resto-img {
+         /* width: 180px; */
+         /* height: 145px; */
+         object-fit: cover;
+         border-radius: 8px;
+         }
+         /* Rating under Image */
+         .resto-rating {
+         /* font-family: "Inter", sans-serif; */
+         font-size: 14px;
+         color: #201f1e;
+         font-weight: bold;
+         }
+         .reviews {
+         opacity: 0.7;
+         }
+      </style>
+      <style type="text/css" data-vite-dev-id="/home/raghu/Desktop/riya/zervio/src/components/RestaurantList.css">
+      .card-list {
+         display: grid;
+         grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+         gap: 12px;
+         /* padding: 20px; */
+         /* margin: 0 auto; */
+         /* width: 98%; */
+         /* background: linear-gradient(to bottom,#0e0e11 100%, #ffffff 0%); */
+         margin-bottom: 50px;
+         padding-top:10px;
+         margin-top: -2px;
+         border-top-left-radius: 20px;
+         border-top-right-radius: 20px;
+         }
+         .card-list h1{
+         padding: 12px;
+         color: rgb(29, 28, 28);
+         }
+         .toggle{
+         width: 160px;
+         position: relative;
+         left: 10px;
+         }
+      </style>
+      <style type="text/css" data-vite-dev-id="/home/raghu/Desktop/riya/zervio/src/components/Cat.css">
+      .category-container {
+         display: flex;
+         gap: 1px;
+         overflow-x: auto;
+         padding: 3px 10px;
+         scrollbar-width: none;
+         /* background: #111114; */
+         }
+         .category-container::-webkit-scrollbar {
+         display: none;
+         }
+         .category-card {
+         min-width: 80px;
+         cursor: pointer;
+         text-align: center;
+         transition: transform 0.2s ease;
+         }
+         .category-card img {
+         /* width: 144px; */
+         height: 80px;
+         border-radius: 12px;
+         object-fit: cover;
+         }
+         .category-card p {
+         margin-top: 6px;
+         font-size: 14px;
+         font-weight: 600;
+         }
+         /* ---------------- MOBILE OPTIMIZATION ---------------- */
+@media (max-width: 480px) {
+
+  /* HEADER */
+  .header-container {
+    padding: 12px;
+  }
+
+  .top-header h1 {
+    font-size: 1rem;
+  }
+
+  .top-header p {
+    font-size: 0.75rem;
+  }
+
+  .profile-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* SEARCH BAR */
+  .search-bar {
+    grid-template-columns: 2fr 1fr;
+    gap: 8px;
+  }
+  .search-bar input {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  /* CATEGORY LIST */
+  .category-container {
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .category-card {
+    min-width: 64px;
+  }
+
+  .category-card img {
+    height: 60px;
+  }
+
+  .category-card p {
+    font-size: 12px;
+  }
+
+  /* RESTAURANT CARDS LIST */
+  .card-list {
+    grid-template-columns: 1fr;  /* full width on mobile */
+    gap: 10px;
+    padding: 0 8px;
+  }
+
+  .resto-card {
+    width: 100%;
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .resto-name {
+    font-size: 17px;
+  }
+
+  .resto-items {
+    font-size: 13px;
+  }
+
+  .resto-items li {
+    margin-bottom: 2px;
+  }
+
+  .resto-delivery-time {
+    font-size: 13px;
+  }
+
+  /* ORDER BUTTON */
+  .order-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  /* RIGHT SIDE IMAGE */
+  .resto-img {
+    width: 110px;
+    height: 85px;
+  }
+
+  .resto-rating {
+    font-size: 12px;
+  }
+
+  /* NAVBAR */
+  nav.navbar {
+    padding: 6px 0;
+  }
+  
+  nav .nav-link svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  nav .nav-link div {
+    font-size: 13px !important;
+  }
+}
+ .offer-pill {
+    background: linear-gradient(90deg,
+            rgba(17, 85, 203, 1) 0%,
+            rgba(83, 140, 238, 1) 25%,
+            rgba(17, 85, 203, 1) 50%,
+            rgba(17, 85, 203, 0.8) 80%,
+            rgba(17, 85, 203, 0) 100%);
+    padding: 4px 14px 4px 10px;
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    width: fit-content;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.offer-icon {
+    margin-right: 6px;
+    font-size: 16px;
+}
+
+.offer-text {
+    white-space: nowrap;
+}
+
+.loader-container {
+  max-width: 480px;
+  margin: auto;
+  padding: 16px;
+}
+
+/* Card */
+.loader-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+/* Image placeholder */
+.loader-image {
+  width: 300px;
+  height: 160px;
+}
+
+/* Content */
+.loader-content {
+  padding: 12px;
+}
+
+/* Text lines */
+.loader-line {
+  height: 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.loader-line-short {
+  width: 60%;
+}
+
+/* Skeleton animation */
+.skeleton-loader {
+  background: linear-gradient(
+    90deg,
+    #e0e0e0 25%,
+    #f0f0f0 37%,
+    #e0e0e0 63%
+  );
+  background-size: 400% 100%;
+  animation: loader-shimmer 1.4s ease infinite;
+}
+
+/* Animation */
+@keyframes loader-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+.form-switch .form-check-input{
+  width: 2.7rem !important;
+}
+
+
+      </style>
+   </head>
+   <body>
+      <div id="root">
+         <header class="header-container">
+            <div class="top-header d-flex justify-content-between align-items-center">
+               <div>
+                  <h1 class="mb-1 fs-5" id="address_area">Address</h1>
+                  <p class="mb-0 text-muted fs-6" id="address">Sector-B, Talwandi, Kota</p>
+               </div>
+               <div class="profile-icon" onclick="javascript:window.location.href='profile.php';">
+                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="40" width="40" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"></path>
+                  </svg>
+               </div>
+            </div>
+            <div class="search-bar my-3">
+               <input placeholder="Search for restaurants, dishes..." class="form-control" type="text" id="search">
+               <div class="veg-toggle-container d-flex align-items-center flex-column">
+                  <span class="toggle-label active"><?php if($_SESSION["main_category"]!="Veg") echo "Non-Veg"; else echo "Veg";?></span>
+                  <div class="form-check form-switch mx-2"><input class="form-check-input veg-switch" id="vegSwitch" type="checkbox" onclick="toggle_category()" <?php if($_SESSION["main_category"]!="Veg") echo "checked";?>></div>
+               </div>
+            </div>
+         </header>
+         <div class="banner-image mb-3"><img alt="Banner" class="img-fluid rounded" src="banner-gif.gif"></div>
+         <div class="category-container">
+            <div class="category-card"><img alt="Biryani" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_Biryani.png"></div>
+            <div class="category-card"><img alt="Burger" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/8f508de7-e0ac-4ba8-b54d-def9db98959e_burger.png"></div>
+            <div class="category-card"><img alt="Pizza" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_Pizzas.png"></div>
+            <div class="category-card"><img alt="Chinese" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2025/1/24/897bc750-6b57-4e7d-9365-87c1ab2c6d7e_Chinese2.png"></div>
+            <div class="category-card"><img alt="Shawarma" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/f1263395-5d4a-4775-95dc-80ab6f3bbd89_shawarma.png"></div>
+            <div class="category-card"><img alt="Rolls" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/17/58760e8e-324f-479e-88fa-31800120ea38_Rolls1.png"></div>
+            <div class="category-card"><img alt="Pasta" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/f1263395-5d4a-4775-95dc-80ab6f3bbd89_pasta.png"></div>
+            <div class="category-card"><img alt="Cake" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/8f508de7-e0ac-4ba8-b54d-def9db98959e_cake.png"></div>
+            <div class="category-card"><img alt="Momos" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_Momos.png"></div>
+            <div class="category-card"><img alt="Shakes" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/8f508de7-e0ac-4ba8-b54d-def9db98959e_Shake.png"></div>
+            <div class="category-card"><img alt="Veg" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/8f508de7-e0ac-4ba8-b54d-def9db98959e_Pure Veg.png"></div>
+            <div class="category-card"><img alt="Noodles" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_Noodles.png"></div>
+            <div class="category-card"><img alt="Dosa" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_Dosa.png"></div>
+            <div class="category-card"><img alt="Khichdi" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_Khichdi.png"></div>
+            <div class="category-card"><img alt="Salad" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2025/1/24/186ebf5c-d9ad-4d2b-a2b0-77795e19241f_Salad2.png"></div>
+            <div class="category-card"><img alt="Cutlet" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/8f508de7-e0ac-4ba8-b54d-def9db98959e_cutlet.png"></div>
+            <div class="category-card"><img alt="Samosa" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/f1263395-5d4a-4775-95dc-80ab6f3bbd89_samosa.png"></div>
+            <div class="category-card"><img alt="Pav Bhaji" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/8f508de7-e0ac-4ba8-b54d-def9db98959e_Pav Bhaji.png"></div>
+            <div class="category-card"><img alt="Coffee" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/8f508de7-e0ac-4ba8-b54d-def9db98959e_coffee.png"></div>
+            <div class="category-card"><img alt="Waffle" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/cb5669c8-d6f1-46ab-b24d-3da99b9fa32c_waffle.png"></div>
+         </div>
+         <div>
+
+         <div class="container-fluid pb-5">
+    <div class="row pb-5" id="search-result" style="display:none">
+         </div>
+          <div id="restaurant-loading" class="loading-skeleton">
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line short"></div>
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line short"></div>
+        <div class="skeleton-line"></div>
+    </div>
+
+            <h1>Serving Now</h1>
+            <div id="restaurant-list" class="card-list">
+            <div class="loader-container" id="loader-container">
+
+              <div class="loader-card">
+                <div class="loader-image skeleton-loader"></div>
+
+                <div class="loader-content">
+                  <div class="loader-line loader-line-short skeleton-loader"></div>
+                  <div class="loader-line skeleton-loader"></div>
+                  <div class="loader-line skeleton-loader"></div>
+                </div>
+              </div>
+
+              <div class="loader-card">
+                <div class="loader-image skeleton-loader"></div>
+
+                <div class="loader-content">
+                  <div class="loader-line loader-line-short skeleton-loader"></div>
+                  <div class="loader-line skeleton-loader"></div>
+                  <div class="loader-line skeleton-loader"></div>
+                </div>
+              </div>
+
+               <div class="loader-card">
+                <div class="loader-image skeleton-loader"></div>
+
+                <div class="loader-content">
+                  <div class="loader-line loader-line-short skeleton-loader"></div>
+                  <div class="loader-line skeleton-loader"></div>
+                  <div class="loader-line skeleton-loader"></div>
+                </div>
+              </div>
+
+            </div>
+            
+            </div>
+         <nav class="navbar navbar-light fixed-bottom bg-light shadow-sm">
+            <div class="container-fluid justify-content-between">
+               <a class="nav-link text-center" href="home.php">
+                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path>
+                  </svg>
+                  <div style="font-size: 15px;">Home</div>
+               </a>
+               <a class="nav-link text-center" href="addresses.php">
+                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path>
+                  </svg>
+                  <div style="font-size: 15px;">Addresses</div>
+               </a>
+               <a class="nav-link text-center cart" href="orders.php">
+                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z"></path>
+                  </svg>
+                  <div style="font-size: 15px;">Cart</div>
+               </a>
+               <a class="nav-link text-center" href="dine_in.php">
+                  <!--<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M504 255.531c.253 136.64-111.18 248.372-247.82 248.468-59.015.042-113.223-20.53-155.822-54.911-11.077-8.94-11.905-25.541-1.839-35.607l11.267-11.267c8.609-8.609 22.353-9.551 31.891-1.984C173.062 425.135 212.781 440 256 440c101.705 0 184-82.311 184-184 0-101.705-82.311-184-184-184-48.814 0-93.149 18.969-126.068 49.932l50.754 50.754c10.08 10.08 2.941 27.314-11.313 27.314H24c-8.837 0-16-7.163-16-16V38.627c0-14.254 17.234-21.393 27.314-11.314l49.372 49.372C129.209 34.136 189.552 8 256 8c136.81 0 247.747 110.78 248 247.531zm-180.912 78.784l9.823-12.63c8.138-10.463 6.253-25.542-4.21-33.679L288 256.349V152c0-13.255-10.745-24-24-24h-16c-13.255 0-24 10.745-24 24v135.651l65.409 50.874c10.463 8.137 25.541 6.253 33.679-4.21z"></path>
+                  </svg>-->
+                <svg width="18" height="18" viewBox="0 0 48 48" fill="none"
+     xmlns="http://www.w3.org/2000/svg">
+  <!-- Table top -->
+  <rect x="8" y="18" width="32" height="6" rx="2"
+        stroke="currentColor" stroke-width="3" fill="none" />
+
+  <!-- Left table leg -->
+  <rect x="16" y="22" width="4" height="18" rx="2"
+        stroke="currentColor" stroke-width="3" fill="none" />
+
+  <!-- Right table leg -->
+  <rect x="28" y="22" width="4" height="18" rx="2"
+        stroke="currentColor" stroke-width="3" fill="none" />
+</svg>
+
+
+                  <div style="font-size: 15px;">Dine-In</div>
+               </a>
+               <a class="nav-link text-center" href="../vendor_selection.php">
+                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M464 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h416c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zM128 120c-22.091 0-40 17.909-40 40s17.909 40 40 40 40-17.909 40-40-17.909-40-40-40zm0 96c-22.091 0-40 17.909-40 40s17.909 40 40 40 40-17.909 40-40-17.909-40-40-40zm0 96c-22.091 0-40 17.909-40 40s17.909 40 40 40 40-17.909 40-40-17.909-40-40-40zm288-136v-32c0-6.627-5.373-12-12-12H204c-6.627 0-12 5.373-12 12v32c0 6.627 5.373 12 12 12h200c6.627 0 12-5.373 12-12zm0 96v-32c0-6.627-5.373-12-12-12H204c-6.627 0-12 5.373-12 12v32c0 6.627 5.373 12 12 12h200c6.627 0 12-5.373 12-12zm0 96v-32c0-6.627-5.373-12-12-12H204c-6.627 0-12 5.373-12 12v32c0 6.627 5.373 12 12 12h200c6.627 0 12-5.373 12-12z"></path>
+                  </svg>
+                  <div style="font-size: 15px;">Category</div>
+               </a>
+            </div>
+         </nav>
+      </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+   
+
+   <script>
+var all_restaurants="";
+ function showLoading(show) {
+          // var loadingScreen = document.getElementById("loading-screen");
+           //loadingScreen.style.display = show ? "flex" : "none";
+          //  const loadingBox = document.getElementById("loading");
+           // loadingBox.style.display = show ? "block" : "none";
+        }
+var loc;
+function checkLatLngInLocalStorage() {
+//localStorage.removeItem("current_location");
+if (localStorage.getItem("current_location")) {
+    loc = JSON.parse(localStorage.getItem("current_location"));
+    if(!loc.address || loc.address=="" || !loc.address_id || loc.address_id==""){
+    showLoading(true);
+    getLocationFromAndroid();
+   //     getLocation();
+    }
+    else{
+    showLoading(false);
+    document.getElementById("address").innerHTML=loc.address+","+loc.city;
+    
+    loadRestaurants(loc.lat,loc.lng);
+    
+    }
+
+} else {
+        showLoading(true);
+     
+     getLocationFromAndroid();
+      //getLocation();
+}
+   
+}
+
+function requestLocation() {
+    if (typeof AndroidInterface !== 'undefined' && AndroidInterface.requestLocationPermission) {
+        AndroidInterface.requestLocationPermission();
+        
+    } else {
+        alert("Location permission request is not available.");
+    }
+
+}
+
+
+
+async function getLocationFromAndroid() {
+
+     if (typeof AndroidInterface !== 'undefined' && AndroidInterface.getLocation && AndroidInterface.requestLocationPermission) {
+    showLoading(true);
+    AndroidInterface.requestLocationPermission();
+    setTimeout(() => {
+    try {
+      AndroidInterface.getLocation();
+      locationTimeout = setTimeout(() => {
+          // If this runs, it means Android never called fetchLocation()
+          showLoading(false);
+           Swal.fire({
+            icon: 'warning',
+            title: 'Location Not Received',
+            text: 'Please enable GPS and try again.',
+            confirmButtonText: 'Retry'
+          }).then(function(){window.location.href='../vendor_selection.php'});
+        }, 5000);
+    
+
+    } catch (e) {
+      console.log("Permission not ready yet");
+      alert("Please Turn On Location from Settings.");
+    }
+  }, 2000);
+
+
+
+
+    } else {
+        alert("Location permission request is not available.");
+    }
+}
+
+function showLocation(lat, lng) {
+clearTimeout(locationTimeout);
+//showLoading(false);
+//alert(lat);
+  fetchLocation(lat,lng);
+    //alert("Your location: Latitude: " + lat + ", Longitude: " + lng);
+}
+function showLocationError(error){
+
+}
+
+
+function fetchLocation(lat, lng) {
+            const apiKey = "AIzaSyC69g_54D7Co1DJ26F4zMHPbM6Q_NELT1Y"; // Replace with your Google Maps API key
+            const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${apiKey}`;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                console.log(data.results[0]);
+                    const addressComponents = data.results[0].address_components;
+                    const fullAddress = data.results[0].formatted_address;
+                    let area = "";
+                    let city = "";
+                    let state = "";
+                    let pincode = "";
+
+                    addressComponents.forEach(component => {
+                        if (component.types.includes("sublocality_level_2") || component.types.includes("sublocality_level_1")) {
+                            area +=","+component.long_name;
+                        }
+                        if (component.types.includes("administrative_area_level_3")) {
+                            city = component.long_name;
+                        }
+                        if (component.types.includes("administrative_area_level_1")) {
+                            state = component.long_name;
+                        }
+                        if (component.types.includes("postal_code")) {
+                            pincode = component.long_name;
+                        }
+                    });
+                    localStorage.setItem("current_location",JSON.stringify({"address":area.substring(1),"city":city,"state":state,"pincode":pincode,"lat":lat,"lng":lng}));
+                    localStorage.setItem("lat",lat);
+                    localStorage.setItem("lng",lng);
+                    document.getElementById("address").innerHTML=area.substring(1)+","+city;
+                    showLoading(false);
+                    loadRestaurants(lat,lng);
+                })
+                .catch(error => {
+                    alert("Failed to retrieve location details.");
+                    showLoading(false);
+                });
+        }
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const { latitude, longitude } = position.coords;
+                        fetchLocation(latitude, longitude);
+                    },
+                    (error) => {
+                        alert("Failed to get your location.");
+                        showLoading(false);
+                    }
+                );
+            } else {
+                alert("Geolocation is not supported by this browser.");
+                showLoading(false);
+            }
+        }
+
+function addRestaurantToList(restaurant) {
+document.getElementById('restaurant-loading').style.display = 'none';
+document.getElementById('loader-container').style.display = 'none';
+
+    const container = document.getElementById("restaurant-list");
+
+    const div = document.createElement("div");
+    div.classList.add("resto-card");
+    if(restaurant.offline==1){
+    if(restaurant.display_img!="" && restaurant.display_img!="null" &&  restaurant.display_img!=null){
+    restaurant.display_img="../../api/display_images/"+restaurant.display_img;
+    }
+    else{
+    restaurant.display_img="mix-thali-selection.jpg";
+    }
+div.innerHTML=`<div class="resto-left">
+                  <h2 class="resto-name">`+restaurant.name+`</h2>
+                <div class="restaurant-description">`+restaurant.speciality+`</div>
+                  <p class="resto-delivery-time">
+                     <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="margin-right: 6px; vertical-align: middle;">
+                        <path d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"></path>
+                     </svg>
+                     `+restaurant.distance_now+` Km
+                  </p>
+               </div>
+               </div>
+               <div class="resto-right">
+                  <img alt="Burger Barn" class="resto-img" src="`+restaurant.display_img+`">
+                  <div class="resto-rating">⭐ `+restaurant.rating+`</div>
+               </div>
+            </div>`;
+
+
+   /*
+   div.innerHTML=`<div class="col-12 mt-3"><div class="restaurant-card">
+                    <img src="../../api/display_images/`+restaurant.display_img+`" alt="Restaurant Image" class="restaurant-image">
+                      <span class="restaurant-rating"><i class="fas fa-star"></i>&nbsp;`+restaurant.rating+`</span>
+                    <div class="restaurant-info">
+                        <div class="restaurant-name">`+restaurant.name+`</div>
+                        <div class="restaurant-description">`+restaurant.speciality+`</div>
+                        `+restaurant.offer+`<span class="distance">`+restaurant.distance_now+` Km</span>
+                    </div>
+                </div>
+            </div>`; 
+            */
+    }
+    else{
+    all_restaurants+=","+restaurant.id;
+
+  if(restaurant.display_img!="" && restaurant.display_img!="null" &&  restaurant.display_img!=null ){
+    restaurant.display_img="../../api/display_images/"+restaurant.display_img;
+    }
+    else{
+    restaurant.display_img="mix-thali-selection.jpg";
+    }
+
+div.onclick=function(){
+window.location.href='restaurant.php?id='+restaurant.id;
+};
+offer_div="";
+if(restaurant.offer!=""){
+offer_div=`   <div class="offerDiv">
+       <div class="offer-pill d-flex align-items-center">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="offer-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+             <path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"></path>
+          </svg>
+          <span class="offer-text">`+restaurant.offer+`</span>
+       </div>
+    </div>`;
+}
+div.innerHTML=`<div class="resto-left">
+                  <h2 class="resto-name">`+restaurant.name+`</h2>
+                <div class="restaurant-description">`+restaurant.speciality+`</div>`+offer_div+`
+             
+          
+                  <p class="resto-delivery-time">
+                     <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="margin-right: 6px; vertical-align: middle;">
+                        <path d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"></path>
+                     </svg>
+                     `+restaurant.distance_now+` Km
+                  </p>
+               </div>
+               <div class="resto-right">
+                  <img alt="Burger Barn" class="resto-img" src="`+restaurant.display_img+`">
+                  <div class="resto-rating">⭐ `+restaurant.rating+`</div>
+               </div>
+            </div>`;
+
+
+    /*div.innerHTML=`<div class="col-12 mt-3" onclick="javascript:window.location.href='restaurant.php?id=`+restaurant.id+`'"><div class="restaurant-card">
+                    <img src="../../api/display_images/`+restaurant.display_img+`" alt="Restaurant Image" class="restaurant-image">
+                      <span class="restaurant-rating"><i class="fas fa-star"></i>&nbsp;`+restaurant.rating+`</span>
+                    <div class="restaurant-info">
+                        <div class="restaurant-name">`+restaurant.name+`</div>
+                        <div class="restaurant-description">`+restaurant.speciality+`</div>
+                        `+restaurant.offer+`<span class="distance">`+restaurant.distance_now+` Km</span>
+                    </div>
+                </div>
+            </div>`;
+            */
+    }
+   
+   
+   
+    //div.textContent = `${restaurant.name} - ${restaurant.address} (${restaurant.distance})`;
+    container.appendChild(div);
+}
+var main_category='<?=$_SESSION["main_category"]?>';
+function loadRestaurants(lat, lng) {
+document.getElementById('restaurant-loading').style.display = '';
+
+    const eventSource = new EventSource(`../../api/user/get_restaurants.php?lat=${lat}&lng=${lng}&main_category=${main_category}`);
+
+    eventSource.onmessage = function(event) {
+        const restaurant = JSON.parse(event.data);
+        if (restaurant.error) {
+            console.error(restaurant.error);
+        } else {
+          
+            addRestaurantToList(restaurant);
+        }
+    };
+
+    eventSource.addEventListener("complete", function () {
+    document.getElementById('restaurant-loading').style.display = 'none';
+        console.log("All restaurants loaded.");
+        eventSource.close();
+    });
+
+    eventSource.onerror = function() {
+        console.error("Error receiving restaurant data.");
+        eventSource.close();
+    };
+}
+
+var user=JSON.parse(localStorage.getItem("user"));
+//document.getElementById("user_name").innerHTML="Hello "+user.name;
+
+checkLatLngInLocalStorage();
+
+ document.getElementById("search").addEventListener("keyup", function () {
+        const query = this.value;
+
+        if (query.length > 1) {
+            fetch(`../../api/user/search_restaurants.php?q=${encodeURIComponent(query)}&restaurant_ids=${all_restaurants}`)
+                .then(response => response.json())
+                .then(data => {
+                 const container = document.getElementById("search-result"); 
+                    if (data.length > 0) {
+                    container.innerHTML="";
+                    container.style.display="";
+                        data.forEach(item => {
+                         const div = document.createElement("div");
+                        div.classList.add("restaurant");            
+                        var ht=``;
+                       
+                        if(item.type=='Restaurant'){
+                         ht=`<div class="col-12 mt-3" onclick="javascript:window.location.href='restaurant.php?id=`+item.restaurant_id+`'">
+                        <div class="restaurant-card">`;
+                        if(item.img!=""){
+                    ht+=`<img src="../../api/display_images/compressed/`+item.img+`" alt="Restaurant Image" class="restaurant-image"/>`;
+                    }
+                    ht+=`<div class="restaurant-info">
+                        <div class="restaurant-name">`+item.name+`</div>
+                        <p>`+item.address+`</p>
+                    </div>
+                </div>`;
+                    }
+                    if(item.type=='Dish'){
+                     ht=`<div class="col-12 mt-3" onclick="javascript:window.location.href='restaurant.php?id=`+item.restaurant_id+`&dish=`+item.id+`'">
+                        <div class="restaurant-card">`;
+                       if(item.img!=""){
+                    ht+=`<img src="../../api/product_images/`+item.img+`" alt="Dish Image" class="restaurant-image"/>`;
+                    }
+                   ht+=`<div class="restaurant-info">
+                   <h6>`+item.restaurant_name+`</h6>
+                        <div class="restaurant-name">`+item.name+`</div>
+                        <p class="price">&#8377;`+item.price+`</p>
+                    </div>
+                </div>`;
+                    }
+                   ht+=`</div>`;
+                   console.log(ht);
+                div.innerHTML= ht;
+                container.appendChild(div);
+               
+                    
+                        });
+                    } else {
+                       
+                    }
+                   
+                  
+
+                })
+                .catch(error => console.error("Error:", error));
+        } else {
+            document.getElementById("search-result").innerHTML = "";
+            document.getElementById("search-result").style.display = "none";
+        }
+  });
+
+  function handleBackButton() {
+   window.location.href='../vendor_selection.php';
+   return false;
+    }
+
+    function toggle_category(){
+    <?php
+    if($_SESSION["main_category"]=="Veg"){?>
+window.location.href='home.php?main_category=Non-Veg';
+    <?php
+    }
+    else{?>
+window.location.href='home.php?main_category=Veg';
+    <?php
+    }
+    ?>
+    }
+</script>
+   
+   
+   
+   
+   </body>
+</html>

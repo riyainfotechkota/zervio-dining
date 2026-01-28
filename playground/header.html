@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header Example</title>
+  <style>
+    /* CSS from your React component */
+
+    #menuPanel {
+      position: static !important;
+      transform: none !important;
+      visibility: visible !important;
+      height: auto !important;
+      border: none;
+      background: #ea7100 !important;
+    }
+
+    .logout {
+      position: absolute;
+      color: white;
+      right: 12px;
+      top: 50%;
+      font-weight: bold;
+      cursor: pointer;
+      transform: translateY(-50%);
+    }
+
+    .menu-horizontal {
+      list-style: none;
+      padding-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      flex-direction: row;
+      margin-top: 0.1rem;
+    }
+
+    .menu-horizontal li a {
+      color: #031837;
+      text-decoration: none;
+      padding: 8px 15px;
+      font-size: 15px;
+    }
+
+    .menu-horizontal li a:hover {
+      color: #f3f1eb;
+    }
+
+    .active a {
+      color: #f3f1eb !important;
+    }
+
+    .header {
+      background: #031837;
+    }
+
+    .imageDiv {
+      padding: 10px;
+      position: relative;
+      text-align: center;
+    }
+
+    .imageDiv img {
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="imageDiv">
+      <img src="zer_logo.jpeg" alt="Logo Image" width="80" height="80">
+      <span class="logout" onclick="handleLogout()">Logout</span>
+    </div>
+
+    <div id="menuPanel">
+      <div class="offcanvas-body p-0">
+        <ul class="menu-horizontal">
+          <li class="active"><a href="/new_order">New Order</a></li>
+          <li><a href="/orders">Orders</a></li>
+          <li><a href="/menu">Menu</a></li>
+          <li><a href="/orderHistory">Order History</a></li>
+          <li><a href="/printer">Printer Settings</a></li>
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/table">Create Table</a></li>
+          <li><a href="/day_report">Daily Report</a></li>
+          <li><a href="/product_report">Product Wise Report</a></li>
+          <li><a href="/waiters">Waiters</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    function handleLogout() {
+      alert("Logged out! Redirecting to home...");
+      window.location.href = "/";
+    }
+  </script>
+
+</body>
+</html>
