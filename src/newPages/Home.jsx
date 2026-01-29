@@ -1,10 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./tableView.css";
 import { FaCheck, FaTimes, FaSpinner, FaSync, FaCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function Home() {
     const tables = Array.from({ length: 20 }, (_, i) => i + 1);
+    const [tableList, setTableList] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [restaurantId] = useState(() => {
+        const user = localStorage.getItem("user");
+        return user ? JSON.parse(user).id : null;
+    });
+
+    useEffect(() => {
+        setLoading(true);
+        const formData = new FormData();
+        formData.append("id", restaurantId);
+
+        Promise.all([
+            fetch("/api/get_tables.php", { method: "POST", body: formData }).then(res => res.ok ? res.json() : Promise.reject("Tables fetch failed"))
+        ])
+            .then(([tableData]) => {
+                setTableList(tableData);
+                setLoading(false);
+            })
+            .catch(err => {
+                setError(err);
+                setLoading(false);
+            });
+    }, []);
 
     return (
         <div className="tv-wrapper container-fluid">
@@ -58,17 +83,12 @@ export default function Home() {
             </div>
 
             <h6 className="tv-section">Ground Floor</h6>
-            <div className="tv-grid">
-                {tables.map((t) => (
-                    <Link className="text-decoration-none text-black" to='/order'><div key={t} className="tv-table">{t}</div></Link>
+            {loading && <p>Loading Tables data...</p>}
+            {!loading && <div className="tv-grid">
+                {tableList.map((t) => (
+                    <Link className="text-decoration-none text-black" to='/order'><div key={t.id} className="tv-table">{t.name}</div></Link>
                 ))}
-            </div>
-
-            <h6 className="tv-section mt-4">Party Hall</h6>
-            <div className="tv-grid">
-                <div className="tv-table">Hall 1</div>
-                <div className="tv-table">Hall 2</div>
-            </div>
+            </div>}
         </div>
     );
 }

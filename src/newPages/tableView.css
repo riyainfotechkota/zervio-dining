@@ -50,6 +50,7 @@
     background: #fff;
     font-weight: 600;
     cursor: pointer;
+    font-size: clamp(0.11rem, 1vw, 1rem) !important;
 }
 
 .tv-table:hover {
