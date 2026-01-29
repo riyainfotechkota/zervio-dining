@@ -54,7 +54,9 @@ export default function Home() {
                 <div className="d-flex justify-content-between">
 
                     <div className="mb-3">
-                        <button type="button" className="btn btn-danger me-2">+ Table Reservation</button>
+                        <Link to='/reservation'>
+                            <button type="button" className="btn btn-danger me-2">+ Table Reservation</button>
+                        </Link>
                         <button type="button" className="btn btn-danger">+ Contactless</button>
                     </div>
 
