@@ -1,5 +1,5 @@
 import { Fragment } from "react"
-import { FaCheck, FaTimes, FaSpinner, FaSync, FaCircle } from "react-icons/fa";
+import { FaCheck, FaConciergeBell, FaListUl, FaUserTie, FaHistory, FaPrint, FaChartBar, FaBoxOpen } from "react-icons/fa";
 import { useAuth } from "../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import ProfileMenu from "../components/ProfileMenu";
@@ -27,18 +27,84 @@ export default function HeaderNew() {
                         <span className="tv-support">📞 Call For Support</span>
                         <span className="tv-support">9099912483</span>
                     </div>
-                    {Array.from({ length: 10 }, (_, i) => i + 1).map(v => {
-                        if (v === 10) {
-                            return (
-                                <ProfileMenu handleLogout={handleLogout} />
+                    {Array.from({ length: 8 }, (_, i) => i + 1).map((v) => {
+                        switch (v) {
+                            case 1:
+                                return (
+                                    <Link to="/menu">
 
-                            )
+                                        <button key={v} type="button" className="btn">
+                                            <FaListUl />
+                                        </button>
+                                    </Link>
+                                );
+
+                            case 2:
+                                return (
+                                    <Link to='/orders'>
+                                        <button key={v} type="button" className="btn">
+                                            <FaConciergeBell />
+                                        </button>
+                                    </Link>
+                                );
+
+                            case 3:
+                                return (
+                                    <Link to='/orderHistory'>
+
+                                        <button key={v} type="button" className="btn">
+                                            <FaHistory />
+                                        </button>
+                                    </Link>
+                                );
+                            case 4:
+                                return (
+                                    <Link to='/printer'>
+                                        <button key={v} type="button" className="btn">
+                                            <FaPrint />
+                                        </button>
+                                    </Link>
+                                );
+                            case 5:
+                                return (
+                                    <Link to='/day_report'>
+                                        <button key={v} type="button" className="btn">
+                                            <FaChartBar />
+                                        </button>
+                                    </Link>
+                                );
+                            case 6:
+                                return (
+                                    <Link to='/product_report'>
+                                        <button key={v} type="button" className="btn">
+                                            <FaBoxOpen />
+                                        </button>
+                                    </Link>
+                                );
+                            case 7:
+                                return (
+                                    <Link to='/waiters'>
+
+                                        <button key={v} type="button" className="btn">
+                                            <FaUserTie />
+                                        </button>
+                                    </Link>
+                                );
+
+                            case 8:
+                                return (
+                                    <ProfileMenu key={v} handleLogout={handleLogout} />
+                                );
+
+                            default:
+                                return (
+                                    <button key={v} type="button" className="btn">
+                                        <FaCheck />
+                                    </button>
+                                );
                         }
-                        return (
-
-                            <button type="button" className="btn"><FaCheck /></button>
-                        )
                     })}
+
                 </div>
             </div>
         </Fragment>
