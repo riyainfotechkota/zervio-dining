@@ -47,17 +47,17 @@ function App() {
           <Routes>
             <Route path="/" element={<PublicRoute><AuthPanel /></PublicRoute>} />
             <Route path="/menu" element={<ProtectedRoute><Menu /></ProtectedRoute>} />
+            <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
             {/* <Route path="/menu" element={<ProtectedRoute><Menu /></ProtectedRoute>} />
             <Route path="/new_order" element={<ProtectedRoute><OrderMenu /></ProtectedRoute>} />
             <Route path="/orders" element={<ProtectedRoute><CurrentOrder /></ProtectedRoute>} />
             <Route path="/orderHistory" element={<ProtectedRoute><OrderHistory /></ProtectedRoute>} />
             <Route path="/waiters" element={<ProtectedRoute><Waiters /></ProtectedRoute>} />
-            <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
             <Route path="/printer" element={<ProtectedRoute><PrinterSettings /></ProtectedRoute>} />
             <Route path="/day_report" element={<ProtectedRoute><DayReport /></ProtectedRoute>} />
             <Route path="/product_report" element={<ProtectedRoute><ProductReport /></ProtectedRoute>} />
-            <Route path="/table" element={<ProtectedRoute><NewTable /></ProtectedRoute>} />
             <Route path="/reservation" element={<ProtectedRoute><Reservation /></ProtectedRoute>} /> */}
+            <Route path="/table" element={<ProtectedRoute><NewTable /></ProtectedRoute>} />
             <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
             <Route path="/order" element={<ProtectedRoute><Order /></ProtectedRoute>} />
 
