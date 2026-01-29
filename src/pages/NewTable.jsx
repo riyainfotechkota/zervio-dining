@@ -1,11 +1,12 @@
 import { Fragment } from "react"
 import Header from "../components/Header";
 import '../css/NewTable.css'
+import HeaderNew from "../newPages/HeaderNew";
 
 const NewTable = () => {
     return (
         <Fragment>
-            <Header order={6} />
+            <HeaderNew />
             <main className="new">
                 <h2>Create a new Table</h2>
                 <div className="createNew">

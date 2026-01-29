@@ -3,6 +3,7 @@ import GreenAlert from "../components/GreenAlert";
 import RedAlert from "../components/RedAlert";
 import Header from "../components/Header";
 import '../css/Profile.css'
+import HeaderNew from "../newPages/HeaderNew";
 
 const Profile = () => {
     const [showRed, setShowRed] = useState(false);
@@ -129,8 +130,8 @@ const Profile = () => {
                 />
             )}
 
-            <Header order={5} />
 
+            <HeaderNew />
             <div className="container p-4" style={{ maxWidth: "1200px" }}>
 
                 <div className="logoAndTitle">
