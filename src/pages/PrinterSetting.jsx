@@ -1,10 +1,10 @@
 import { Fragment } from "react"
-import Header from "../components/Header";
+import HeaderNew from "../newPages/HeaderNew";
 
 const PrinterSettings = () => {
     return (
         <Fragment>
-            <Header order={4} />
+            <HeaderNew />
 
             Printer Settings
         </Fragment>

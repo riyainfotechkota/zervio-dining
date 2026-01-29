@@ -1,12 +1,12 @@
 import { Fragment, useEffect, useState } from "react";
 import "../css/CurrentOrder.css";
 import { FiEdit2 } from "react-icons/fi";
-import Header from "../components/Header";
 import GreenAlert from "../components/GreenAlert";
 import RedAlert from "../components/RedAlert";
 import { useOrders } from "../context/OrderContext";
 import InfoNotification from "../components/InfoNotification";
 import { FaCheck, FaTimes, FaSpinner } from "react-icons/fa";
+import HeaderNew from "../newPages/HeaderNew";
 
 const CurrentOrder = () => {
     const { orders, autoAcceptedOrder } = useOrders();
@@ -123,8 +123,7 @@ const CurrentOrder = () => {
                     onCancel={() => setShowRed(false)}
                 />
             )}
-            <Header order={1} />
-
+            <HeaderNew />
             <main className="d-flex flex-column">
 
                 <div className="orderStatus">

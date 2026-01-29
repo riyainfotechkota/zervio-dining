@@ -1,9 +1,9 @@
 import { Fragment, useEffect, useState } from "react";
-import Header from "../components/Header";
 import "../css/Waiter.css";
 import { FiTrash2 } from "react-icons/fi";
 import GreenAlert from "../components/GreenAlert";
 import RedAlert from "../components/RedAlert";
+import HeaderNew from "../newPages/HeaderNew";
 
 const Waiters = () => {
     const [form, setForm] = useState({ name: "", contact: "", password: "" });
@@ -108,7 +108,7 @@ const Waiters = () => {
                     onCancel={() => setShowRed(false)}
                 />
             )}
-            <Header order={9} />
+            <HeaderNew />
             <main className="main">
                 <h2>Manage Waiters</h2>
 

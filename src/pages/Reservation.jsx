@@ -1,14 +1,14 @@
 import { Fragment, useState } from "react";
-import Header from "../components/Header";
 import "../css/Reservation.css";
 import BookingDetails from "./BookingDetails";
 import { BsPlusCircle } from "react-icons/bs";
+import HeaderNew from "../newPages/HeaderNew";
 
 const Reservation = () => {
     const [bookTable, setBookTable] = useState(false)
     return (
         <Fragment>
-            <Header order={10} />
+            <HeaderNew />
             <div className="main-head">
                 <h2 className="book-head">{!bookTable ? 'All Bookings' : "Create a Booking"}</h2>
                 <div >

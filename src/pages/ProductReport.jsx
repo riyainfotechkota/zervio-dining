@@ -1,11 +1,10 @@
 import { Fragment } from "react"
-import Header from "../components/Header";
+import HeaderNew from "../newPages/HeaderNew";
 
 const ProductReport = () => {
     return (
         <Fragment>
-            <Header order={8} />
-
+            <HeaderNew />
             Product Report
         </Fragment>
     )

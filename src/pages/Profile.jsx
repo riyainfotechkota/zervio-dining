@@ -1,7 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import GreenAlert from "../components/GreenAlert";
 import RedAlert from "../components/RedAlert";
-import Header from "../components/Header";
 import '../css/Profile.css'
 import HeaderNew from "../newPages/HeaderNew";
 

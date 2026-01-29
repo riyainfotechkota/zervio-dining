@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
-import Header from "../components/Header";
 import "../css/OrderHistory.css";
 import RedAlert from "../components/RedAlert";
+import HeaderNew from "../newPages/HeaderNew";
 
 const OrderHistory = () => {
     const [orders, setOrders] = useState([]);
@@ -74,7 +74,7 @@ const OrderHistory = () => {
 
     return (
         <Fragment>
-            <Header order={3} />
+            <HeaderNew />
             {showRed && (
                 <RedAlert
                     title={alertData.title}

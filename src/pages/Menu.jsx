@@ -1,11 +1,11 @@
 import React, { Fragment, useState, useEffect, useMemo, useRef, useCallback } from "react";
 import "../css/Menu.css";
-import Header from "../components/Header";
 import { convertToAmPm } from "../helpers/amToPm";
 import { getImageUrl } from "../helpers/getImageUrl";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 import GreenAlert from "../components/GreenAlert";
 import RedAlert from "../components/RedAlert";
+import HeaderNew from "../newPages/HeaderNew";
 
 const Menu = () => {
   const [items, setItems] = useState([]);
@@ -437,7 +437,7 @@ const Menu = () => {
 
   return (
     <Fragment>
-      <Header order={2} />
+      <HeaderNew />
       {showGreen && <GreenAlert
         title={alertData.title}
         text={alertData.text}

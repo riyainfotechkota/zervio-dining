@@ -1,10 +1,10 @@
 import { Fragment } from "react"
-import Header from "../components/Header";
+import HeaderNew from "../newPages/HeaderNew";
 
 const DayReport = () => {
     return (
         <Fragment>
-            <Header order={7} />
+            <HeaderNew />
 
             Daily Reporting
         </Fragment>
