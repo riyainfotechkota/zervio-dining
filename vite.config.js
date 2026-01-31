@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-export default defineConfig({
-  base: "/zervio-dining/",
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
+  base: mode === "production" ? "/zervio-dining/" : "/",
   build: {
     sourcemap: false,
     minify: "esbuild",
@@ -18,4 +18,4 @@ export default defineConfig({
       }
     }
   }
-})
+}))
