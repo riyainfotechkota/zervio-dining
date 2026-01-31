@@ -73,8 +73,17 @@ export default function Home() {
                 <h6 className="tv-section">Ground Floor</h6>
                 {loading && <p>Loading Tables data...</p>}
                 {!loading && <div className="tv-grid">
+                    {console.log(tableList)}
                     {tableList.map((t) => (
-                        <Link className="text-decoration-none text-black" to='/order'><div key={t.id} className="tv-table">{t.name}</div></Link>
+                        <Link
+                            className="text-decoration-none text-black"
+                            to={{
+                                pathname: "/order",
+                                search: `?tableId=${t.id}`,
+                            }}
+                        >
+                            <div key={t.id} className="tv-table">{t.name}</div>
+                        </Link>
                     ))}
                 </div>}
             </div>
