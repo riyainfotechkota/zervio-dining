@@ -174,7 +174,7 @@ export default function BookingDetails() {
                     <SidePanel classToUse={'dining-tables'} title="Select Table" onClose={() => setActivePanel(null)}>
                         {TABLE.map((g) => (
                             <div className="diningDetails">
-                                <img height={100} width={100} src="dining-set.svg"></img>
+                                <img height={100} width={100} src="/dining-set.svg"></img>
                                 <span>Indoor</span>
                             </div>
                         ))}
